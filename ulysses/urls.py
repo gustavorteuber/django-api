@@ -7,7 +7,8 @@ from rest_framework_simplejwt.views import TokenRefreshView
 
 from core.views import (
     ContatosViewSet,
-    PublicacaoViewSet,
+    DolarViewSet,
+    IndiceViewSet,
     MyTokenObtainPairView,
     UsuarioViewSet,
     BannerViewSet,
@@ -23,7 +24,8 @@ from uploader.router import router as uploader_router
 
 router = DefaultRouter()
 router.register(r'contatos', ContatosViewSet)
-router.register(r'publicacoes', PublicacaoViewSet)
+router.register(r'dolar', DolarViewSet)
+router.register(r'indice', IndiceViewSet)
 router.register(r'usuario', UsuarioViewSet)
 router.register(r'banner', BannerViewSet)
 router.register(r'saq', saqViewSet)

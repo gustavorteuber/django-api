@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from rest_framework.serializers import ModelSerializer, SlugRelatedField
-from core.models import Usuario, Publicacao, Contatos, Banner, saq
+from core.models import Usuario, Dolar, Contatos, Banner, saq, Indice
 from uploader.models import Image
 from uploader.serializers import ImageSerializer
 
@@ -79,15 +79,27 @@ class UsuarioCreateSerializer(ModelSerializer):
         return newUser
 
 
-class PublicacaoSerializer(ModelSerializer):
+class DolarSerializer(ModelSerializer):
     class Meta:
-        model = Publicacao
+        model = Dolar
         fields = "__all__"
 
 
-class DetailPublicacaoSerializer(ModelSerializer):
+class DetailDolarSerializer(ModelSerializer):
     class Meta:
-        model = Publicacao
+        model = Dolar
+        fields = "__all__"
+        depth = 1
+      
+class IndiceSerializer(ModelSerializer):
+    class Meta:
+        model = Indice
+        fields = "__all__"
+
+
+class DetailIndiceSerializer(ModelSerializer):
+    class Meta:
+        model = Indice
         fields = "__all__"
         depth = 1
       

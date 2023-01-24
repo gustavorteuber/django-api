@@ -13,7 +13,24 @@ class Usuario(AbstractUser):
     )
 
 
-class Publicacao(models.Model):
+class Dolar(models.Model):
+    titulo = models.CharField(max_length=100)
+    descricao = models.TextField()
+    foto = models.ForeignKey(
+        Image,
+        related_name="+",
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,
+        default="",
+    )
+    link = models.TextField()
+
+    def __str__(self):
+        return self.titulo
+
+
+class Indice(models.Model):
     titulo = models.CharField(max_length=100)
     descricao = models.TextField()
     foto = models.ForeignKey(
@@ -60,7 +77,7 @@ class Banner(models.Model):
 class saq(models.Model):
     topico = models.CharField(max_length=100, default="")
     pergunta = models.CharField(max_length=100, default="")
-    resposta = models.TextField()
+    texto = models.TextField()
     foto = models.ForeignKey(
         Image,
         related_name="+",
