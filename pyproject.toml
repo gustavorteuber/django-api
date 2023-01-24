@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "backendulysses"
+version = "0.1.0"
+description = ""
+authors = ["gustavorteuber <gugareis135@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+django-cors-headers = "^3.13.0"
+djangorestframework = "^3.14.0"
+djangorestframework-simplejwt = "^5.2.2"
+python-magic = "^0.4.27"
+pillow = "^9.4.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
