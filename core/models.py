@@ -46,6 +46,22 @@ class Indice(models.Model):
     def __str__(self):
         return self.titulo
 
+class acoes(models.Model):
+    titulo = models.CharField(max_length=100)
+    descricao = models.TextField()
+    foto = models.ForeignKey(
+        Image,
+        related_name="+",
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,
+        default="",
+    )
+    link = models.TextField()
+
+    def __str__(self):
+        return self.titulo
+
 
 class Contatos(models.Model):  
     email = models.CharField(max_length=100)

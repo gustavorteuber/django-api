@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from rest_framework.serializers import ModelSerializer, SlugRelatedField
-from core.models import Usuario, Dolar, Contatos, Banner, saq, Indice
+from core.models import Usuario, Dolar, Contatos, Banner, saq, Indice, acoes
 from uploader.models import Image
 from uploader.serializers import ImageSerializer
 
@@ -162,5 +162,17 @@ class saqSerializer(ModelSerializer):
 class DetailsaqSerializer(ModelSerializer):
     class Meta:
         model = saq
+        fields = "__all__"
+        depth = 1
+
+class acoesSerializer(ModelSerializer):
+    class Meta:
+        model = acoes
+        fields = "__all__"
+
+
+class DetailacoesSerializer(ModelSerializer):
+    class Meta:
+        model = acoes
         fields = "__all__"
         depth = 1

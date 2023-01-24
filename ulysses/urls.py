@@ -13,6 +13,7 @@ from core.views import (
     UsuarioViewSet,
     BannerViewSet,
     saqViewSet,
+    acoesViewSet,
 
 )
 
@@ -26,9 +27,11 @@ router = DefaultRouter()
 router.register(r'contatos', ContatosViewSet)
 router.register(r'dolar', DolarViewSet)
 router.register(r'indice', IndiceViewSet)
+router.register(r'acoes', acoesViewSet)
 router.register(r'usuario', UsuarioViewSet)
 router.register(r'banner', BannerViewSet)
 router.register(r'saq', saqViewSet)
+
 
 
 
