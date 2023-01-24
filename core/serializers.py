@@ -4,7 +4,6 @@ from core.models import Usuario, Dolar, Contatos, Banner, saq, Indice, acoes
 from uploader.models import Image
 from uploader.serializers import ImageSerializer
 
-
 class UsuarioSerializer(ModelSerializer):
     
     password_confirmation = serializers.CharField(max_length=150, write_only=True)
@@ -18,12 +17,12 @@ class UsuarioSerializer(ModelSerializer):
     )
     foto = ImageSerializer(required=False, read_only=True, default=None)
     id = serializers.IntegerField(read_only=True, required=False)
- 
+    
 
     class Meta:
         model = Usuario
         read_only_fields = ('id', )
-        fields = ('id', 'first_name', 'last_name', 'email', 'username', 'password', 'password_confirmation', 'foto', 'foto_attachment_key')
+        fields = ('id', 'first_name', 'last_name', 'email', 'username', 'password', 'password_confirmation', 'foto', 'foto_attachment_key', 'is_superuser')
 
 
     def validate(self, args):
