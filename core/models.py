@@ -25,6 +25,8 @@ class Dolar(models.Model):
         default="",
     )
     link = models.TextField()
+    curso = models.TextField()
+
 
     def __str__(self):
         return self.titulo
@@ -42,6 +44,8 @@ class Indice(models.Model):
         default="",
     )
     link = models.TextField()
+    curso = models.TextField()
+
 
     def __str__(self):
         return self.titulo
@@ -58,6 +62,7 @@ class acoes(models.Model):
         default="",
     )
     link = models.TextField()
+    curso = models.TextField()
 
     def __str__(self):
         return self.titulo
