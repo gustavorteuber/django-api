@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_simplejwt',
     'corsheaders',
+    "drf_spectacular",
     'uploader',
     'core',
 ]
@@ -118,6 +119,16 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+REST_FRAMEWORK = {
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
+}
+
+SPECTACULAR_SETTINGS = {
+    "TITLE": "SHALLUSA API",
+    "DESCRIPTION": "API para gerenciamento de SHALLUSA, incluindo endpoints e documentação.",
+    "VERSION": "1.0.0",
+}
 
 
 # Static files (CSS, JavaScript, Images)
