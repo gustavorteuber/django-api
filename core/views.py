@@ -1,7 +1,7 @@
 from rest_framework.permissions import AllowAny
 from rest_framework.viewsets import ModelViewSet
 from core.models import Usuario, Contatos, Dolar, Indice, Banner, saq, acoes
-from core.serializers import UsuarioSerializer, UsuarioCreateSerializer, ContatosSerializer,DetailContatosSerializer, DolarSerializer, DetailDolarSerializer, IndiceSerializer, DetailIndiceSerializer, DetailBannerSerializer, BannerSerializer,saqSerializer, DetailsaqSerializer, DetailacoesSerializer, acoesSerializer
+from core.serializers import UsuarioSerializer, UsuarioCreateSerializer, ContatosSerializer, DolarSerializer, DetailDolarSerializer, IndiceSerializer, DetailIndiceSerializer, DetailBannerSerializer, BannerSerializer,saqSerializer, DetailsaqSerializer, DetailacoesSerializer, acoesSerializer
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from rest_framework_simplejwt.views import TokenObtainPairView
 
@@ -36,10 +36,6 @@ class ContatosViewSet(ModelViewSet):
     serializer_class = ContatosSerializer 
     permission_classes = [AllowAny]
 
-    def get_serializer_class(self):
-        if self.action in ["list", "retrieve"]:
-            return DetailContatosSerializer
-        return ContatosSerializer
 
 class DolarViewSet(ModelViewSet):
     queryset = Dolar.objects.all()

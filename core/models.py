@@ -69,21 +69,11 @@ class acoes(models.Model):
 
 
 class Contatos(models.Model):  
-    email = models.CharField(max_length=100)
-    foto = models.ForeignKey(
-        Image,
-        related_name="+",
-        on_delete=models.CASCADE,
-        null=True,
-        blank=True,
-        default=None,
-    )
-    whatsapp = models.CharField(max_length=100, default="")
-    instagram = models.CharField(max_length=100, default="")
-    youtube = models.CharField(max_length=100, default="")
+
+    link = models.CharField(max_length=100, default="")
 
     def __str__(self):
-        return self.email
+        return self.youtube
 
 class Banner(models.Model):
      foto = models.ForeignKey(
