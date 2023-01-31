@@ -12,11 +12,35 @@ djangorestframework = "^3.14.0"
 djangorestframework-simplejwt = "^5.2.2"
 python-magic = "^0.4.27"
 pillow = "^9.4.0"
-environ = "^1.0"
-mysqlclient = "^2.1.1"
 drf-spectacular = "^0.25.1"
+django-environ = "^0.9.0"
 
 
+
+[tool.pdm.build]
+includes = []
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[project]
+authors = [
+    {name = "gustavorteuber", email = "gugareis135@gmail.com"},
+]
+requires-python = ">=3.8,<4.0"
+dependencies = [
+    "django-cors-headers<4.0.0,>=3.13.0",
+    "djangorestframework<4.0.0,>=3.14.0",
+    "djangorestframework-simplejwt<6.0.0,>=5.2.2",
+    "python-magic<1.0.0,>=0.4.27",
+    "pillow<10.0.0,>=9.4.0",
+    "drf-spectacular<1.0.0,>=0.25.1",
+    "django-environ<1.0.0,>=0.9.0",
+    "mysqlclient>=2.1.1",
+]
+name = "backendulysses"
+version = "0.1.0"
+description = ""
+readme = "README.md"
+
+[project.urls]

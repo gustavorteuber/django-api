@@ -13,6 +13,7 @@ import os
 from pathlib import Path
 import environ
 
+
 # Carrega as variáveis de ambiente do sistema operacional e as prepara para usá-las
 BASE_DIR = Path(__file__).resolve().parent.parent
 env = environ.Env()
