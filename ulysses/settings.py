@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 import os 
 from pathlib import Path
 import environ
+
 # Carrega as variáveis de ambiente do sistema operacional e as prepara para usá-las
 BASE_DIR = Path(__file__).resolve().parent.parent
 env = environ.Env()
@@ -21,10 +22,6 @@ SECRET_KEY = env('SECRET_KEY')
 DEBUG = env('DEBUG')
 ALLOWED_HOSTS = env('ALLOWED_HOSTS').split(',')
 DATABASES = {'default': env.db()}
-
-
-
-
 
 
 # Application definition
@@ -77,32 +74,13 @@ MEDIA_URL = "http://localhost:8000/media/"
 MEDIA_ENDPOINT = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media/")
 FILE_UPLOAD_PERMISSIONS = 0o640
-
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR,'media')
+]
 WSGI_APPLICATION = 'ulysses.wsgi.application'
 
 CORS_ALLOW_ALL_ORIGINS = True
 
-
-# Database
-# https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'djangoshallusa',
-#         'USER': 'root',
-#         'PASSWORD': 'root',
-#         'HOST': '127.0.0.1',
-#         'PORT': '5432',
-#     }
-# }
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
 
 
 # Password validation
@@ -152,6 +130,8 @@ SPECTACULAR_SETTINGS = {
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 # Default primary key field type
