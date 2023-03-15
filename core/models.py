@@ -24,6 +24,22 @@ class Dolar(models.Model):
         blank=True,
         default="",
     )
+    foto2 = models.ForeignKey(
+        Image,
+        related_name="+",
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,
+        default="",
+    )
+    foto3 = models.ForeignKey(
+        Image,
+        related_name="+",
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,
+        default="",
+    )
     link = models.TextField()
     curso = models.TextField()
 
@@ -43,6 +59,22 @@ class Indice(models.Model):
         blank=True,
         default="",
     )
+    foto2 = models.ForeignKey(
+        Image,
+        related_name="+",
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,
+        default="",
+    )
+    foto3 = models.ForeignKey(
+        Image,
+        related_name="+",
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,
+        default="",
+    )
     link = models.TextField()
     curso = models.TextField()
 
@@ -54,6 +86,22 @@ class acoes(models.Model):
     titulo = models.CharField(max_length=100)
     descricao = models.TextField()
     foto = models.ForeignKey(
+        Image,
+        related_name="+",
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,
+        default="",
+    )
+    foto2 = models.ForeignKey(
+        Image,
+        related_name="+",
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,
+        default="",
+    )
+    foto3 = models.ForeignKey(
         Image,
         related_name="+",
         on_delete=models.CASCADE,
